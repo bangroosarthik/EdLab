@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image{
+    position: relative;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.content:hover{
+    opacity: 1.5;
+    cursor: pointer;
+}
+
+.content > *{
+    transform: translateY(25px);
+    transition: transform 0.6s;
+}
+
+.content:hover > *{
+    transform: translateY(0px);
+}
+
+select,
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"]
+{
+    @apply block w-full my-3 py-3 rounded-lg text-black;
+    @apply border p-3 border-gray-300 bg-gray-100 block
+}
+
+button, .button{
+    @apply block w-full my-4 text-white font-semibold;
+    @apply border border-gray-500 bg-blue-600 rounded-xl px-6 py-3
+}
+
+button[type="submit"], .submit{
+    @apply border-0 bg-blue-700 text-white
+}
+
+button[type="submit"]:hover{
+    @apply bg-blue-500 
+}
+
+
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="tel"]:disabled,
+input[type="text"]:disabled{
+    @apply bg-gray-300 border-0 cursor-not-allowed text-black
+}
+
+button[type="submit"]:disabled, .submit:disabled{
+    @apply cursor-not-allowed bg-red-400
+}
+
+
+
+
+div.tabs> *{
+    @apply bg-gray-400 text-white rounded-full  py-3 px-4;
+}
+
+
+div.tabs >  *.active{
+    @apply bg-blue-500 text-white
+}
