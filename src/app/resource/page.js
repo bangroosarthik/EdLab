@@ -36,12 +36,12 @@ export default function ResourceContent(){
             <div className="flex flex-wrap flex-col gap-10 mt-10">
                 {resource?.length >0 && resource.map(res=>(
 
-                    <Link href={'/resource/edit/'+res._id } className="bg-gray-200 rounded-lg text-center   p-4 mb-1">
+                    <Link key={res._id} href={'/resource/edit/'+res._id } className="bg-gray-200 rounded-lg text-center   p-4 mb-1">
                         <div>
                             <h1 className="text-blue-500 underline" >Title: </h1>{res.title}
                             <div className="flex gap-2 justify-center">
                                 <h2>Link: </h2>
-                                <Link target="_blank" className="text-blue-500"  href={res.link} >Link</Link>
+                                <p target="_blank" className="text-blue-500"  href={res.link} >Link</p>
                             </div>
                             <h2 className=" text-blue-500 underline">
                                 Description:
